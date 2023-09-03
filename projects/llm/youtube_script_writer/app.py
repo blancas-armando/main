@@ -6,7 +6,7 @@ import streamlit as st
 import openai 
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain, SequentialChain 
+from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
 from langchain.utilities import WikipediaAPIWrapper 
 
@@ -15,7 +15,7 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # App framework
 st.title('Youtube Script Generator')
-prompt = st.text_input('Enter your prompt here!') 
+prompt = st.text_input('Enter your prompt here!')
 
 # Prompt templates
 title_template = PromptTemplate(
