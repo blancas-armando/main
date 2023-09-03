@@ -31,6 +31,6 @@ sequential_chain = SimpleSequentialChain(chains=[interview_question_chain, inter
 
 # Show to screen if prompt is provided
 if prompt:
-    response = sequential_chain.run(role=prompt)
+    response = sequential_chain.run(prompt)
     st.write(response)
 
