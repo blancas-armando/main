@@ -13,7 +13,7 @@ prompt = st.text_input('Input the role you are applying for here')
 
 # Prompt Template
 title_template = PromptTemplate(
-    input_variables= ['topic'],
+    input_variables= ['role'],
     template='Write me interview questions for a {role} position'
 )
 
