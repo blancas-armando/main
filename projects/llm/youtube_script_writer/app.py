@@ -14,8 +14,8 @@ load_dotenv()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # App framework
-st.title('🦜🔗 YouTube GPT Creator')
-prompt = st.text_input('Plug in your prompt here') 
+st.title('Youtube Script Generator')
+prompt = st.text_input('Enter your prompt here!') 
 
 # Prompt templates
 title_template = PromptTemplate(
@@ -25,7 +25,7 @@ title_template = PromptTemplate(
 
 script_template = PromptTemplate(
     input_variables = ['title', 'wikipedia_research'], 
-    template='write me a youtube video script based on this title TITLE: {title} while leveraging this wikipedia reserch:{wikipedia_research} '
+    template='write me a youtube video script based on this title TITLE: {title} while leveraging this wikipedia reserch:{wikipedia_research}'
 )
 
 # Memory 
