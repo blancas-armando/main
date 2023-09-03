@@ -17,9 +17,16 @@ from langchain.agents.agent_toolkits import (
 
 
 def main():
-    load_dotenv()
-    openai.api_key = os.getenv('OPENAI_API_KEY')
+    # load_dotenv() == st.secrets['OPENAI_API_KEY']
+    # openai.api_key = os.getenv('OPENAI_API_KEY')
 
+    with st.sidebar:
+        st.image(Image.open(r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png'))
+        st.write('This is a personal project and does not reflect JPMorgan Chase & Co.')
+        openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+        "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+
+    openai.api_key = openai_api_key
     llm = OpenAI(temperature=0.1, verbose=True)
     embeddings = OpenAIEmbeddings()
 
@@ -41,10 +48,6 @@ def main():
         verbose=True
     )
     
-    with st.sidebar:
-        st.image(Image.open(r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png'))
-        st.write('This is a personal project and does not reflect JPMorgan Chase & Co.')
-
     st.title(':bookmark_tabs: 2022 Annual Report Reader')
     prompt = st.text_input('Input your prompt here')
 
