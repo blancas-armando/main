@@ -18,8 +18,8 @@ interview_question_template = PromptTemplate(
 )
 
 interview_prep_template = PromptTemplate(
-    input_variables= ['role'],
-    template='Write me an interview prep guideline for a {role} position'
+    input_variables= ['question'],
+    template='Write me an interview prep guideline for these questions {question}'
 )
 
 # LLMs
