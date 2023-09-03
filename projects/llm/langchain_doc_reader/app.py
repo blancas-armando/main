@@ -1,5 +1,5 @@
-# import os
-# from dotenv import load_dotenv
+import os
+from dotenv import load_dotenv
 
 import openai
 import streamlit as st
@@ -19,7 +19,6 @@ from langchain.agents.agent_toolkits import (
 def main():
     # load_dotenv() == st.secrets['OPENAI_API_KEY']
     # openai.api_key = os.getenv('OPENAI_API_KEY')
-
     with st.sidebar:
         st.image(Image.open(r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png'))
         st.write('This is a personal project and does not reflect JPMorgan Chase & Co.')
