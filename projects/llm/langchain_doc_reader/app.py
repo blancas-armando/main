@@ -46,7 +46,7 @@ def main():
         st.write('This is a personal project and does not reflect JPMorgan Chase & Co.')
 
     st.title(':bookmark_tabs: 2022 Annual Report Reader')
-    prompt = st.text_input('Input your question here')
+    prompt = st.text_input('Input your prompt here')
 
     if prompt:
         response = agent_executor.run(prompt)
