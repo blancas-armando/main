@@ -2,7 +2,8 @@
 import os 
 from dotenv import load_dotenv
 
-import streamlit as st 
+import streamlit as st
+import openai 
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain 
@@ -10,7 +11,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.utilities import WikipediaAPIWrapper 
 
 load_dotenv()
-os.getenv('apikey')
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # App framework
 st.title('🦜🔗 YouTube GPT Creator')
