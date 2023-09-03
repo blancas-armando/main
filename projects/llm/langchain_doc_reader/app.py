@@ -1,4 +1,3 @@
-# Import os to set API key
 import os
 from dotenv import load_dotenv
 
@@ -42,9 +41,8 @@ def main():
         verbose=True
     )
     
-    image = Image.open(r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png')
     with st.sidebar:
-        st.image(image)
+        st.image(Image.open(r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png'))
         st.write('This is a personal project and does not reflect JPMorgan Chase & Co.')
 
     st.title(':bookmark_tabs: 2022 Annual Report Reader')
