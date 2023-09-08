@@ -23,10 +23,12 @@ def main():
     llm = OpenAI(temperature=0.1, verbose=True)
     embeddings = OpenAIEmbeddings()
 
-    loader = PyPDFLoader(r'projects\llm\langchain_doc_reader\jpmc_annualreport_2022.pdf')
+    loader = PyPDFLoader(
+        r'projects\llm\langchain_doc_reader\jpmc_annualreport_2022.pdf')
 
     pages = loader.load_and_split()
-    store = Chroma.from_documents(pages, embeddings, collection_name='jpmc_annualreport')
+    store = Chroma.from_documents(
+        pages, embeddings, collection_name='jpmc_annualreport')
 
     vectorstore_info = VectorStoreInfo(
         name="annual_report_2022",
@@ -40,10 +42,12 @@ def main():
         toolkit=toolkit,
         verbose=True
     )
-    
+
     with st.sidebar:
-        st.image(Image.open(r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png'))
-        st.write('This is a personal project and does not reflect JPMorgan Chase & Co.')
+        st.image(Image.open(
+            r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png'))
+        st.write(
+            'This is a personal project and does not reflect JPMorgan Chase & Co.')
 
     st.title(':bookmark_tabs: 2022 Annual Report Reader')
     prompt = st.text_input('Input your prompt here')
@@ -52,7 +56,7 @@ def main():
         response = agent_executor.run(prompt)
         st.write(response)
         with st.expander('Document Similarity Search'):
-            search = store.similarity_search_with_score(prompt)  
+            search = store.similarity_search_with_score(prompt)
             st.write(search[0][0].page_content)
 
 
