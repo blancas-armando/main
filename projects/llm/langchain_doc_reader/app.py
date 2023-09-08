@@ -24,7 +24,7 @@ def main():
     embeddings = OpenAIEmbeddings()
 
     loader = PyPDFLoader(
-        r'projects\llm\langchain_doc_reader\jpmc_annualreport_2022.pdf')
+        r'projects/llm/langchain_doc_reader/jpmc_annualreport_2022.pdf')
 
     pages = loader.load_and_split()
     store = Chroma.from_documents(
@@ -45,7 +45,7 @@ def main():
 
     with st.sidebar:
         st.image(Image.open(
-            r'projects\llm\langchain_doc_reader\jpmorganchase_logo.png'))
+            r'projects/llm/langchain_doc_reader/jpmorganchase_logo.png'))
         st.write(
             'This is a personal project and does not reflect JPMorgan Chase & Co.')
 
