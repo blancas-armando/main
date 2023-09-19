@@ -1,9 +1,9 @@
 import os
 from dotenv import load_dotenv
+import json
 
 import pandas as pd
 import spotipy
-from spotipy import Spotify
 from spotipy.oauth2 import SpotifyOAuth
 import streamlit as st
 
@@ -30,8 +30,10 @@ def main():
     print('Recent Top Tracks')
     print('------------------')
     user_top_tracks_results = sp.current_user_top_tracks(time_range='short_term', limit=1)
-    print(user_top_tracks_results)
-    for i, item in enumerate(user_top_tracks_results['items']):
+    print(json.dumps(user_top_tracks_results, indent=2, sort_keys=True))
+   
+    # TODO: Show the artist name of each top track
+    for i, item, in enumerate(user_top_tracks_results['items']):
         print(i, item['name'])
     print('--------------------')
 
