@@ -18,6 +18,19 @@ def main():
                                                    redirect_uri='https://flippingbook.com/404',
                                                    scope=scope))
 
+    # Current User Display Nmae
+    print('User Display Name')
+    print('--------------------')
+    print(sp.current_user()['display_name'])
+    print('--------------------')
+    
+    # Current User Image
+    print('User Image')
+    print('--------------------')
+    print(sp.current_user()['images'][0]['url'])
+    print('--------------------')
+
+
     # Short Term Top Artists
     print('Recent Top Artists')
     print('--------------------')
