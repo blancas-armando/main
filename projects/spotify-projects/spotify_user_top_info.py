@@ -43,7 +43,7 @@ def main():
 
     # Short Term Top Artists
     print('Recent Top Artists')
-    st.text('Recent Top Artists')
+    # st.text('Recent Top Artists')
     print('--------------------')
     user_top_artists_results = sp.current_user_top_artists(time_range='short_term', limit=10)
     for i, item in enumerate(user_top_artists_results['items']):
@@ -56,7 +56,7 @@ def main():
 
     # Short Term Top Tracks
     print('Recent Top Tracks')
-    st.text('Recent Top Tracks')
+    # st.text('Recent Top Tracks')
     print('------------------')
     user_top_tracks_results = sp.current_user_top_tracks(time_range='short_term', limit=10)
     for i, item, in enumerate(user_top_tracks_results['items']):
